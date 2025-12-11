@@ -1,0 +1,88 @@
+<!-- ESDEMA Header Component -->
+<!-- Skip to Content (Accessibility) -->
+<a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+<!-- Header -->
+<header class="header" role="banner">
+  <div class="container">
+    <nav class="nav" role="navigation" aria-label="Navegación principal">
+      <a href="/" class="logo" aria-label="ESDEMA - Inicio">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="40" height="40" rx="10" fill="#0ea5e9"/>
+          <path d="M10 20C10 14.477 14.477 10 20 10C25.523 10 30 14.477 30 20" stroke="white" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="20" cy="24" r="4" fill="white"/>
+          <path d="M20 20V14" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <span class="logo-text">ESDEMA</span>
+      </a>
+
+      <div class="nav-menu" id="nav-menu">
+        <div class="nav-menu-inner">
+          <!-- Estados Dropdown -->
+          <div class="nav-dropdown">
+            <button class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+              Estados
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M6 9l6 6 6-6"></path>
+              </svg>
+            </button>
+            <div class="nav-dropdown-menu">
+              <div class="nav-dropdown-grid">
+                <div class="nav-dropdown-column">
+                  <span class="nav-dropdown-label">Principales</span>
+                  <a href="/cdmx/" class="nav-dropdown-item">Ciudad de México</a>
+                  <a href="/jalisco/" class="nav-dropdown-item">Jalisco</a>
+                  <a href="/nuevo-leon/" class="nav-dropdown-item">Nuevo León</a>
+                  <a href="/estado-de-mexico/" class="nav-dropdown-item">Estado de México</a>
+                </div>
+                <div class="nav-dropdown-column">
+                  <span class="nav-dropdown-label">Populares</span>
+                  <a href="/puebla/" class="nav-dropdown-item">Puebla</a>
+                  <a href="/queretaro/" class="nav-dropdown-item">Querétaro</a>
+                  <a href="/guanajuato/" class="nav-dropdown-item">Guanajuato</a>
+                  <a href="/veracruz/" class="nav-dropdown-item">Veracruz</a>
+                </div>
+              </div>
+              <div class="nav-dropdown-footer">
+                <a href="/estados/" class="nav-dropdown-all">
+                  Ver los 32 estados
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <a href="/escuelas/" class="nav-link">Escuelas</a>
+          <a href="/blog/" class="nav-link">Blog</a>
+          <a href="/guia-precios/" class="nav-link">Precios</a>
+
+          <!-- Mobile Only Links -->
+          <div class="nav-mobile-extra">
+            <a href="/registrar-escuela/" class="nav-link">Registrar Escuela</a>
+            <a href="/contacto/" class="nav-link">Contacto</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-actions">
+        <a href="/registrar-escuela/" class="btn btn-outline btn-sm nav-register">
+          Registrar Escuela
+        </a>
+        <a href="/escuelas/" class="btn btn-primary btn-sm">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.35-4.35"></path>
+          </svg>
+          Buscar
+        </a>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>

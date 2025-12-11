@@ -1,0 +1,1423 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- SEO Primary Tags -->
+  <title>Escuelas de Manejo en CDMX | Las Mejores Autoescuelas Ciudad de Mexico</title>
+  <meta name="description" content="Encuentra las mejores escuelas de manejo en Ciudad de Mexico. Compara precios desde $2,350 MXN en Roma, Condesa, Polanco, Coyoacan y mas. Resenas verificadas de alumnos reales.">
+  <meta name="keywords" content="escuelas de manejo CDMX, clases de manejo Ciudad de Mexico, autoescuela CDMX, curso de manejo DF, escuela manejo Roma, escuela manejo Polanco, escuela manejo Coyoacan, aprender a manejar CDMX">
+  <meta name="author" content="ESDEMA - Directorio de Escuelas de Manejo">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://esdema.mx/cdmx/">
+
+  <!-- Geo Tags -->
+  <meta name="geo.region" content="MX-CMX">
+  <meta name="geo.placename" content="Ciudad de Mexico">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://esdema.mx/cdmx/">
+  <meta property="og:title" content="Escuelas de Manejo en CDMX | Las Mejores Autoescuelas">
+  <meta property="og:description" content="Encuentra las mejores escuelas de manejo en Ciudad de Mexico. Compara precios, lee resenas verificadas y agenda tu curso hoy.">
+  <meta property="og:image" content="https://esdema.mx/img/og-cdmx.jpg">
+  <meta property="og:locale" content="es_MX">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Escuelas de Manejo en CDMX | Las Mejores Autoescuelas">
+  <meta name="twitter:description" content="Encuentra las mejores escuelas de manejo en Ciudad de Mexico. Compara precios, lee resenas verificadas y agenda tu curso hoy.">
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0F172A">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Escuelas de Manejo en Ciudad de Mexico",
+    "description": "Directorio de las mejores escuelas de manejo en CDMX",
+    "url": "https://esdema.mx/cdmx/"
+  }
+  </script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/css/style.css">
+
+  <style>
+    /* Custom styles for CDMX page */
+
+    /* Schools Module Container */
+    .schools-module {
+      background: var(--gray-50);
+      border-radius: var(--radius-2xl);
+      padding: 2rem;
+      margin-top: -3rem;
+      position: relative;
+      z-index: 10;
+      box-shadow: var(--shadow-xl);
+    }
+
+    /* Module Header with Filters */
+    .schools-module-header {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--gray-200);
+      margin-bottom: 2rem;
+    }
+
+    .schools-module-title-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .schools-module-title {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .schools-module-title h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin: 0;
+    }
+
+    .schools-count-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: #fff;
+      border-radius: var(--radius-full);
+      font-size: 0.875rem;
+      font-weight: 600;
+    }
+
+    .schools-count-badge svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    /* Filters Row */
+    .schools-filters {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .filter-item {
+      display: flex;
+      align-items: center;
+      gap: 0.625rem;
+      background: #fff;
+      padding: 0.625rem 1rem;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--gray-200);
+      transition: all var(--transition);
+    }
+
+    .filter-item:hover {
+      border-color: var(--primary);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .filter-item label {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--gray-500);
+      text-transform: uppercase;
+      letter-spacing: 0.025em;
+      white-space: nowrap;
+    }
+
+    .filter-item select {
+      padding: 0.375rem 2rem 0.375rem 0.75rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--gray-800);
+      border: none;
+      background-color: transparent;
+      appearance: none;
+      cursor: pointer;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%230ea5e9' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 0 center;
+      min-width: 140px;
+    }
+
+    .filter-item select:focus {
+      outline: none;
+    }
+
+    /* View Toggle */
+    .view-toggle {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      background: #fff;
+      padding: 0.375rem;
+      border-radius: var(--radius);
+      border: 1px solid var(--gray-200);
+      margin-left: auto;
+    }
+
+    .view-toggle-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: var(--radius-sm);
+      color: var(--gray-400);
+      transition: all var(--transition);
+      cursor: pointer;
+    }
+
+    .view-toggle-btn:hover {
+      color: var(--gray-600);
+    }
+
+    .view-toggle-btn.active {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    /* Schools Grid within Module */
+    .schools-module-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 1024px) {
+      .schools-module-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .schools-module {
+        padding: 1.25rem;
+        margin-top: -2rem;
+        border-radius: var(--radius-xl);
+      }
+
+      .schools-module-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .schools-module-header {
+        padding-bottom: 1rem;
+        margin-bottom: 1.25rem;
+      }
+
+      .schools-module-title-row {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .schools-filters {
+        width: 100%;
+      }
+
+      .filter-item {
+        flex: 1;
+        min-width: calc(50% - 0.5rem);
+      }
+
+      .filter-item label {
+        display: none;
+      }
+
+      .filter-item select {
+        width: 100%;
+        min-width: auto;
+      }
+
+      .view-toggle {
+        display: none;
+      }
+    }
+
+    /* Enhanced School Card */
+    .school-card-enhanced {
+      background: #fff;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: all var(--transition);
+      border: 1px solid var(--gray-100);
+    }
+
+    .school-card-enhanced:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-xl);
+      border-color: var(--primary-light);
+    }
+
+    .school-card-enhanced .school-card-image {
+      position: relative;
+      height: 160px;
+      background: linear-gradient(135deg, var(--gray-200) 0%, var(--gray-300) 100%);
+    }
+
+    .school-card-enhanced .school-card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .school-badges-row {
+      position: absolute;
+      top: 0.75rem;
+      left: 0.75rem;
+      right: 0.75rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .school-badges-left {
+      display: flex;
+      gap: 0.375rem;
+    }
+
+    .school-badge-sm {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.25rem 0.625rem;
+      font-size: 0.6875rem;
+      font-weight: 600;
+      border-radius: var(--radius-full);
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+
+    .badge-verified {
+      background: rgba(16, 185, 129, 0.95);
+      color: #fff;
+    }
+
+    .badge-profeco {
+      background: rgba(249, 115, 22, 0.95);
+      color: #fff;
+    }
+
+    .badge-semovi {
+      background: rgba(14, 165, 233, 0.95);
+      color: #fff;
+    }
+
+    .school-card-enhanced .school-card-content {
+      padding: 1.25rem;
+    }
+
+    /* Rating row */
+    .rating-row {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.625rem;
+    }
+
+    .rating-stars {
+      display: flex;
+      gap: 1px;
+    }
+
+    .rating-stars svg {
+      width: 14px;
+      height: 14px;
+      fill: var(--warning);
+    }
+
+    .rating-stars svg.empty {
+      fill: var(--gray-300);
+    }
+
+    .rating-score {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--gray-900);
+    }
+
+    .rating-count {
+      font-size: 0.75rem;
+      color: var(--gray-500);
+    }
+
+    /* School name */
+    .school-name-link {
+      display: block;
+      font-size: 1.0625rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: 0.375rem;
+      line-height: 1.3;
+      transition: color var(--transition);
+    }
+
+    .school-name-link:hover {
+      color: var(--primary);
+    }
+
+    /* Location */
+    .school-location-row {
+      display: flex;
+      align-items: center;
+      gap: 0.375rem;
+      font-size: 0.8125rem;
+      color: var(--gray-500);
+      margin-bottom: 0.875rem;
+    }
+
+    .school-location-row svg {
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
+      color: var(--gray-400);
+    }
+
+    /* Features */
+    .school-features-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.375rem;
+      margin-bottom: 1rem;
+    }
+
+    .feature-chip {
+      padding: 0.25rem 0.5rem;
+      font-size: 0.6875rem;
+      font-weight: 500;
+      color: var(--gray-600);
+      background: var(--gray-100);
+      border-radius: var(--radius-full);
+    }
+
+    /* Price and actions */
+    .school-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 1rem;
+      border-top: 1px solid var(--gray-100);
+      gap: 1rem;
+    }
+
+    .school-price-block {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .price-from {
+      font-size: 0.6875rem;
+      color: var(--gray-500);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .price-amount {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    .school-actions-row {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .btn-details {
+      padding: 0.5rem 0.875rem;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--gray-700);
+      background: var(--gray-100);
+      border-radius: var(--radius);
+      transition: all var(--transition);
+    }
+
+    .btn-details:hover {
+      background: var(--gray-200);
+      color: var(--gray-900);
+    }
+
+    .btn-whatsapp {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+      padding: 0.5rem 0.875rem;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: #fff;
+      background: var(--success);
+      border-radius: var(--radius);
+      transition: all var(--transition);
+    }
+
+    .btn-whatsapp:hover {
+      background: var(--success-dark);
+      transform: translateY(-1px);
+    }
+
+    .btn-whatsapp svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    /* Pagination Enhanced */
+    .pagination-enhanced {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--gray-200);
+    }
+
+    .page-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 40px;
+      height: 40px;
+      padding: 0 0.75rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--gray-600);
+      background: #fff;
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius);
+      transition: all var(--transition);
+      cursor: pointer;
+    }
+
+    .page-btn:hover:not(.disabled):not(.active) {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .page-btn.active {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #fff;
+    }
+
+    .page-btn.disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+
+    .page-btn svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .page-ellipsis {
+      color: var(--gray-400);
+      padding: 0 0.25rem;
+    }
+
+    /* Alcaldias Section Enhanced */
+    .alcaldias-section {
+      padding: 4rem 0;
+      background: #fff;
+    }
+
+    .alcaldias-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .alcaldias-header h2 {
+      font-size: 1.75rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .alcaldias-header p {
+      color: var(--gray-500);
+      margin: 0;
+    }
+
+    .alcaldias-grid-enhanced {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+
+    .alcaldia-card-enhanced {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 1.25rem;
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      transition: all var(--transition);
+    }
+
+    .alcaldia-card-enhanced:hover {
+      background: #fff;
+      border-color: var(--primary);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+
+    .alcaldia-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: #fff;
+      border-radius: var(--radius);
+      color: var(--primary);
+      flex-shrink: 0;
+    }
+
+    .alcaldia-card-enhanced:hover .alcaldia-icon {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .alcaldia-info h3 {
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--gray-900);
+      margin: 0 0 0.125rem 0;
+    }
+
+    .alcaldia-info span {
+      font-size: 0.8125rem;
+      color: var(--gray-500);
+    }
+
+    @media (max-width: 1024px) {
+      .alcaldias-grid-enhanced {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .alcaldias-grid-enhanced {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Info Section Enhanced */
+    .info-section-enhanced {
+      padding: 4rem 0;
+      background: var(--gray-50);
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .info-block h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .info-block h3 {
+      font-size: 1.125rem;
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+      color: var(--gray-800);
+    }
+
+    .info-block p {
+      color: var(--gray-600);
+      line-height: 1.7;
+    }
+
+    .info-block ul {
+      margin: 0.75rem 0;
+      padding-left: 1.25rem;
+      list-style: none;
+    }
+
+    .info-block li {
+      position: relative;
+      color: var(--gray-600);
+      margin-bottom: 0.5rem;
+      padding-left: 1rem;
+    }
+
+    .info-block li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.5rem;
+      width: 6px;
+      height: 6px;
+      background: var(--primary);
+      border-radius: 50%;
+    }
+
+    .info-card {
+      background: #fff;
+      border-radius: var(--radius-xl);
+      padding: 2rem;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .info-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .info-card h3 svg {
+      color: var(--primary);
+    }
+
+    .price-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .price-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--gray-100);
+    }
+
+    .price-item:last-child {
+      border-bottom: none;
+    }
+
+    .price-item-name {
+      font-weight: 500;
+      color: var(--gray-800);
+    }
+
+    .price-item-value {
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    @media (max-width: 768px) {
+      .info-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <div id="esdema-header"></div>
+
+  <!-- Main Content -->
+  <main id="main-content">
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <div class="container">
+        <ol class="breadcrumb-list">
+          <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+          <li class="breadcrumb-item"><a href="/estados/">Estados</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Ciudad de Mexico</li>
+        </ol>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-state">
+      <div class="hero-state-bg">
+        <div class="hero-state-overlay"></div>
+      </div>
+      <div class="container">
+        <div class="hero-state-grid">
+          <div class="hero-state-content">
+            <div class="hero-state-badge">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>Ciudad de Mexico (CDMX)</span>
+            </div>
+            <h1 class="hero-state-title">Escuelas de Manejo en <span class="text-gradient">Ciudad de Mexico</span></h1>
+            <p class="hero-state-subtitle">Encuentra las mejores autoescuelas en CDMX. Compara precios, horarios y resenas verificadas en Roma, Condesa, Polanco, Coyoacan, Del Valle y todas las alcaldias.</p>
+          </div>
+          <div class="hero-state-marketing">
+            <div class="hero-marketing-card">
+              <p class="hero-marketing-text"><strong>Las escuelas de manejo en Ciudad de Mexico</strong> te ofrecen la mejor formacion vial del pais. Con instructores certificados por SEMOVI y vehiculos modernos con doble control, aprenderas a conducir de forma segura en una de las ciudades mas desafiantes del mundo.</p>
+              <p class="hero-marketing-text">Nuestro directorio reune <strong>mas de 120 escuelas de manejo verificadas en CDMX</strong>, con precios desde $2,350 MXN, resenas reales de alumnos y contacto directo por WhatsApp. Encuentra opciones en las 16 alcaldias con horarios flexibles para tu estilo de vida.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Schools Module -->
+    <section class="section" id="escuelas">
+      <div class="container">
+        <div class="schools-module">
+
+          <!-- Module Header with Filters -->
+          <div class="schools-module-header">
+            <div class="schools-module-title-row">
+              <div class="schools-module-title">
+                <h2>Escuelas de Manejo</h2>
+                <span class="schools-count-badge">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                  12 escuelas
+                </span>
+              </div>
+
+              <!-- View Toggle -->
+              <div class="view-toggle">
+                <button class="view-toggle-btn active" title="Vista cuadricula">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="3" width="7" height="7"></rect>
+                    <rect x="3" y="14" width="7" height="7"></rect>
+                    <rect x="14" y="14" width="7" height="7"></rect>
+                  </svg>
+                </button>
+                <button class="view-toggle-btn" title="Vista lista">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="8" y1="6" x2="21" y2="6"></line>
+                    <line x1="8" y1="12" x2="21" y2="12"></line>
+                    <line x1="8" y1="18" x2="21" y2="18"></line>
+                    <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                    <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                    <line x1="3" y1="18" x2="3.01" y2="18"></line>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- Filters -->
+            <div class="schools-filters">
+              <div class="filter-item">
+                <label for="filter-alcaldia">Alcaldia</label>
+                <select id="filter-alcaldia">
+                  <option value="">Todas las alcaldias</option>
+                  <option value="alvaro-obregon">Alvaro Obregon</option>
+                  <option value="azcapotzalco">Azcapotzalco</option>
+                  <option value="benito-juarez">Benito Juarez</option>
+                  <option value="coyoacan">Coyoacan</option>
+                  <option value="cuajimalpa">Cuajimalpa</option>
+                  <option value="cuauhtemoc">Cuauhtemoc</option>
+                  <option value="gustavo-a-madero">Gustavo A. Madero</option>
+                  <option value="iztacalco">Iztacalco</option>
+                  <option value="iztapalapa">Iztapalapa</option>
+                  <option value="magdalena-contreras">Magdalena Contreras</option>
+                  <option value="miguel-hidalgo">Miguel Hidalgo</option>
+                  <option value="milpa-alta">Milpa Alta</option>
+                  <option value="tlahuac">Tlahuac</option>
+                  <option value="tlalpan">Tlalpan</option>
+                  <option value="venustiano-carranza">Venustiano Carranza</option>
+                  <option value="xochimilco">Xochimilco</option>
+                </select>
+              </div>
+              <div class="filter-item">
+                <label for="filter-orden">Ordenar</label>
+                <select id="filter-orden">
+                  <option value="rating">Mejor calificados</option>
+                  <option value="precio-bajo">Precio: menor a mayor</option>
+                  <option value="precio-alto">Precio: mayor a menor</option>
+                  <option value="cercanos">Mas cercanos</option>
+                  <option value="resenas">Mas resenas</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Schools Grid -->
+          <div class="schools-module-grid">
+
+            <!-- School 1 -->
+            <article class="school-card-enhanced">
+              <div class="school-card-image">
+                <img src="/img/escuelas/imperial-cdmx.jpg" alt="Escuela de Manejo Imperial" loading="lazy" width="400" height="225">
+                <div class="school-badges-row">
+                  <div class="school-badges-left">
+                    <span class="school-badge-sm badge-verified">Verificada</span>
+                    <span class="school-badge-sm badge-profeco">Profeco</span>
+                  </div>
+                </div>
+              </div>
+              <div class="school-card-content">
+                <div class="rating-row">
+                  <div class="rating-stars">
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24" class="empty"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  </div>
+                  <span class="rating-score">4.8</span>
+                  <span class="rating-count">(127 resenas)</span>
+                </div>
+                <a href="/escuela/imperial-cdmx/" class="school-name-link">Escuela de Manejo Imperial</a>
+                <div class="school-location-row">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                  <span>Col. Roma Norte, Cuauhtemoc</span>
+                </div>
+                <div class="school-features-row">
+                  <span class="feature-chip">Automatico</span>
+                  <span class="feature-chip">Estandar</span>
+                  <span class="feature-chip">SEMOVI</span>
+                </div>
+                <div class="school-footer">
+                  <div class="school-price-block">
+                    <span class="price-from">Desde</span>
+                    <span class="price-amount">$2,350</span>
+                  </div>
+                  <div class="school-actions-row">
+                    <a href="/escuela/imperial-cdmx/" class="btn-details">Ver mas</a>
+                    <a href="https://wa.me/525512345678?text=Hola,%20encontre%20su%20escuela%20en%20ESDEMA" class="btn-whatsapp" target="_blank" rel="noopener">
+                      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                      WhatsApp
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- School 2 -->
+            <article class="school-card-enhanced">
+              <div class="school-card-image">
+                <img src="/img/escuelas/conduse-cdmx.jpg" alt="Autoescuela Conduse" loading="lazy" width="400" height="225">
+                <div class="school-badges-row">
+                  <div class="school-badges-left">
+                    <span class="school-badge-sm badge-verified">Verificada</span>
+                  </div>
+                </div>
+              </div>
+              <div class="school-card-content">
+                <div class="rating-row">
+                  <div class="rating-stars">
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24" class="empty"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  </div>
+                  <span class="rating-score">4.6</span>
+                  <span class="rating-count">(89 resenas)</span>
+                </div>
+                <a href="/escuela/conduse-cdmx/" class="school-name-link">Autoescuela Conduse</a>
+                <div class="school-location-row">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                  <span>Polanco, Miguel Hidalgo</span>
+                </div>
+                <div class="school-features-row">
+                  <span class="feature-chip">Automatico</span>
+                  <span class="feature-chip">A domicilio</span>
+                  <span class="feature-chip">Nervios</span>
+                </div>
+                <div class="school-footer">
+                  <div class="school-price-block">
+                    <span class="price-from">Desde</span>
+                    <span class="price-amount">$2,800</span>
+                  </div>
+                  <div class="school-actions-row">
+                    <a href="/escuela/conduse-cdmx/" class="btn-details">Ver mas</a>
+                    <a href="https://wa.me/525529828280?text=Hola,%20encontre%20su%20escuela%20en%20ESDEMA" class="btn-whatsapp" target="_blank" rel="noopener">
+                      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                      WhatsApp
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- School 3 -->
+            <article class="school-card-enhanced">
+              <div class="school-card-image">
+                <img src="/img/escuelas/panamericana-cdmx.jpg" alt="Escuela Panamericana de Manejo" loading="lazy" width="400" height="225">
+                <div class="school-badges-row">
+                  <div class="school-badges-left">
+                    <span class="school-badge-sm badge-verified">Verificada</span>
+                    <span class="school-badge-sm badge-semovi">SEMOVI</span>
+                  </div>
+                </div>
+              </div>
+              <div class="school-card-content">
+                <div class="rating-row">
+                  <div class="rating-stars">
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24" class="empty"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  </div>
+                  <span class="rating-score">4.7</span>
+                  <span class="rating-count">(156 resenas)</span>
+                </div>
+                <a href="/escuela/panamericana-cdmx/" class="school-name-link">Escuela Panamericana de Manejo</a>
+                <div class="school-location-row">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                  <span>Col. Roma Sur, Cuauhtemoc</span>
+                </div>
+                <div class="school-features-row">
+                  <span class="feature-chip">Automatico</span>
+                  <span class="feature-chip">Estandar</span>
+                  <span class="feature-chip">50 anos exp.</span>
+                </div>
+                <div class="school-footer">
+                  <div class="school-price-block">
+                    <span class="price-from">Desde</span>
+                    <span class="price-amount">$2,600</span>
+                  </div>
+                  <div class="school-actions-row">
+                    <a href="/escuela/panamericana-cdmx/" class="btn-details">Ver mas</a>
+                    <a href="https://wa.me/525555643210?text=Hola,%20encontre%20su%20escuela%20en%20ESDEMA" class="btn-whatsapp" target="_blank" rel="noopener">
+                      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                      WhatsApp
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- School 4 -->
+            <article class="school-card-enhanced">
+              <div class="school-card-image">
+                <img src="/img/escuelas/teknovial-cdmx.jpg" alt="Escuela Tekno Vial" loading="lazy" width="400" height="225">
+                <div class="school-badges-row">
+                  <div class="school-badges-left">
+                    <span class="school-badge-sm badge-verified">Verificada</span>
+                    <span class="school-badge-sm badge-profeco">Profeco</span>
+                  </div>
+                </div>
+              </div>
+              <div class="school-card-content">
+                <div class="rating-row">
+                  <div class="rating-stars">
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24" class="empty"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  </div>
+                  <span class="rating-score">4.5</span>
+                  <span class="rating-count">(98 resenas)</span>
+                </div>
+                <a href="/escuela/teknovial-cdmx/" class="school-name-link">Escuela de Manejo Tekno Vial</a>
+                <div class="school-location-row">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                  <span>Del Valle, Benito Juarez</span>
+                </div>
+                <div class="school-features-row">
+                  <span class="feature-chip">Automatico</span>
+                  <span class="feature-chip">Estandar</span>
+                  <span class="feature-chip">Paquetes</span>
+                </div>
+                <div class="school-footer">
+                  <div class="school-price-block">
+                    <span class="price-from">Desde</span>
+                    <span class="price-amount">$2,390</span>
+                  </div>
+                  <div class="school-actions-row">
+                    <a href="/escuela/teknovial-cdmx/" class="btn-details">Ver mas</a>
+                    <a href="https://wa.me/525556789012?text=Hola,%20encontre%20su%20escuela%20en%20ESDEMA" class="btn-whatsapp" target="_blank" rel="noopener">
+                      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                      WhatsApp
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- School 5 -->
+            <article class="school-card-enhanced">
+              <div class="school-card-image">
+                <img src="/img/escuelas/launion-cdmx.jpg" alt="Escuela de Manejo La Union" loading="lazy" width="400" height="225">
+                <div class="school-badges-row">
+                  <div class="school-badges-left">
+                    <span class="school-badge-sm badge-verified">Verificada</span>
+                  </div>
+                </div>
+              </div>
+              <div class="school-card-content">
+                <div class="rating-row">
+                  <div class="rating-stars">
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24" class="empty"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  </div>
+                  <span class="rating-score">4.4</span>
+                  <span class="rating-count">(112 resenas)</span>
+                </div>
+                <a href="/escuela/launion-cdmx/" class="school-name-link">Escuela de Manejo La Union</a>
+                <div class="school-location-row">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                  <span>Narvarte, Benito Juarez</span>
+                </div>
+                <div class="school-features-row">
+                  <span class="feature-chip">Automatico</span>
+                  <span class="feature-chip">Estandar</span>
+                  <span class="feature-chip">13 sesiones</span>
+                </div>
+                <div class="school-footer">
+                  <div class="school-price-block">
+                    <span class="price-from">Desde</span>
+                    <span class="price-amount">$3,600</span>
+                  </div>
+                  <div class="school-actions-row">
+                    <a href="/escuela/launion-cdmx/" class="btn-details">Ver mas</a>
+                    <a href="https://wa.me/525554321098?text=Hola,%20encontre%20su%20escuela%20en%20ESDEMA" class="btn-whatsapp" target="_blank" rel="noopener">
+                      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                      WhatsApp
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- School 6 -->
+            <article class="school-card-enhanced">
+              <div class="school-card-image">
+                <img src="/img/escuelas/ama-cdmx.jpg" alt="AMA Escuela de Manejo" loading="lazy" width="400" height="225">
+                <div class="school-badges-row">
+                  <div class="school-badges-left">
+                    <span class="school-badge-sm badge-verified">Verificada</span>
+                    <span class="school-badge-sm badge-semovi">SEMOVI</span>
+                  </div>
+                </div>
+              </div>
+              <div class="school-card-content">
+                <div class="rating-row">
+                  <div class="rating-stars">
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24" class="empty"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  </div>
+                  <span class="rating-score">4.3</span>
+                  <span class="rating-count">(78 resenas)</span>
+                </div>
+                <a href="/escuela/ama-cdmx/" class="school-name-link">AMA - Asociacion Mexicana Automovilistica</a>
+                <div class="school-location-row">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                  <span>Col. Roma, Cuauhtemoc</span>
+                </div>
+                <div class="school-features-row">
+                  <span class="feature-chip">Automatico</span>
+                  <span class="feature-chip">Estandar</span>
+                  <span class="feature-chip">Certificacion</span>
+                </div>
+                <div class="school-footer">
+                  <div class="school-price-block">
+                    <span class="price-from">Desde</span>
+                    <span class="price-amount">$3,200</span>
+                  </div>
+                  <div class="school-actions-row">
+                    <a href="/escuela/ama-cdmx/" class="btn-details">Ver mas</a>
+                    <a href="https://wa.me/525587654321?text=Hola,%20encontre%20su%20escuela%20en%20ESDEMA" class="btn-whatsapp" target="_blank" rel="noopener">
+                      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                      WhatsApp
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+          </div>
+
+          <!-- Pagination -->
+          <nav class="pagination-enhanced" aria-label="Paginacion">
+            <button class="page-btn disabled" aria-disabled="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"></path></svg>
+            </button>
+            <button class="page-btn active" aria-current="page">1</button>
+            <button class="page-btn">2</button>
+            <button class="page-btn">3</button>
+            <span class="page-ellipsis">...</span>
+            <button class="page-btn">10</button>
+            <button class="page-btn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"></path></svg>
+            </button>
+          </nav>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Alcaldias Section -->
+    <section class="alcaldias-section">
+      <div class="container">
+        <div class="alcaldias-header">
+          <h2>Las 16 Alcaldias de la CDMX</h2>
+          <p>Encuentra escuelas de manejo en toda la Ciudad de Mexico</p>
+        </div>
+        <div class="alcaldias-grid-enhanced">
+          <!-- Alvaro Obregon -->
+          <a href="/cdmx/alvaro-obregon/" class="alcaldia-card-enhanced">
+            <div class="alcaldia-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            </div>
+            <div class="alcaldia-info">
+              <h3>Alvaro Obregon</h3>
+              <span>12 escuelas</span>
+            </div>
+          </a>
+          <!-- Azcapotzalco -->
+          <a href="/cdmx/azcapotzalco/" class="alcaldia-card-enhanced">
+            <div class="alcaldia-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            </div>
+            <div class="alcaldia-info">
+              <h3>Azcapotzalco</h3>
+              <span>8 escuelas</span>
+            </div>
+          </a>
+          <!-- Benito Juarez -->
+          <a href="/cdmx/benito-juarez/" class="alcaldia-card-enhanced">
+            <div class="alcaldia-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            </div>
+            <div class="alcaldia-info">
+              <h3>Benito Juarez</h3>
+              <span>28 escuelas</span>
+            </div>
+          </a>
+          <!-- Coyoacan -->
+          <a href="/cdmx/coyoacan/" class="alcaldia-card-enhanced">
+            <div class="alcaldia-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            </div>
+            <div class="alcaldia-info">
+              <h3>Coyoacan</h3>
+              <span>15 escuelas</span>
+            </div>
+          </a>
+          <!-- Cuajimalpa -->
+          <a href="/cdmx/cuajimalpa/" class="alcaldia-card-enhanced">
+            <div class="alcaldia-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            </div>
+            <div class="alcaldia-info">
+              <h3>Cuajimalpa</h3>
+              <span>5 escuelas</span>
+            </div>
+          </a>
+          <!-- Cuauhtemoc -->
+          <a href="/cdmx/cuauhtemoc/" class="alcaldia-card-enhanced">
+            <div class="alcaldia-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            </div>
+            <div class="alcaldia-info">
+              <h3>Cuauhtemoc</h3>
+              <span>24 escuelas</span>
+            </div>
+          </a>
+          <!-- Gustavo A. Madero -->
+          <a href="/cdmx/gustavo-a-madero/" class="alcaldia-card-enhanced">
+            <div class="alcaldia-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            </div>
+            <div class="alcaldia-info">
+              <h3>Gustavo A. Madero</h3>
+              <span>9 escuelas</span>
+            </div>
+          </a>
+          <!-- Iztacalco -->
+          <a href="/cdmx/iztacalco/" class="alcaldia-card-enhanced">
+            <div class="alcaldia-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            </div>
+            <div class="alcaldia-info">
+              <h3>Iztacalco</h3>
+              <span>6 escuelas</span>
+            </div>
+          </a>
+          <!-- Iztapalapa -->
+          <a href="/cdmx/iztapalapa/" class="alcaldia-card-enhanced">
+            <div class="alcaldia-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            </div>
+            <div class="alcaldia-info">
+              <h3>Iztapalapa</h3>
+              <span>11 escuelas</span>
+            </div>
+          </a>
+          <!-- Magdalena Contreras -->
+          <a href="/cdmx/magdalena-contreras/" class="alcaldia-card-enhanced">
+            <div class="alcaldia-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            </div>
+            <div class="alcaldia-info">
+              <h3>Magdalena Contreras</h3>
+              <span>3 escuelas</span>
+            </div>
+          </a>
+          <!-- Miguel Hidalgo -->
+          <a href="/cdmx/miguel-hidalgo/" class="alcaldia-card-enhanced">
+            <div class="alcaldia-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            </div>
+            <div class="alcaldia-info">
+              <h3>Miguel Hidalgo</h3>
+              <span>18 escuelas</span>
+            </div>
+          </a>
+          <!-- Milpa Alta -->
+          <a href="/cdmx/milpa-alta/" class="alcaldia-card-enhanced">
+            <div class="alcaldia-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            </div>
+            <div class="alcaldia-info">
+              <h3>Milpa Alta</h3>
+              <span>2 escuelas</span>
+            </div>
+          </a>
+          <!-- Tlahuac -->
+          <a href="/cdmx/tlahuac/" class="alcaldia-card-enhanced">
+            <div class="alcaldia-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            </div>
+            <div class="alcaldia-info">
+              <h3>Tlahuac</h3>
+              <span>4 escuelas</span>
+            </div>
+          </a>
+          <!-- Tlalpan -->
+          <a href="/cdmx/tlalpan/" class="alcaldia-card-enhanced">
+            <div class="alcaldia-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            </div>
+            <div class="alcaldia-info">
+              <h3>Tlalpan</h3>
+              <span>10 escuelas</span>
+            </div>
+          </a>
+          <!-- Venustiano Carranza -->
+          <a href="/cdmx/venustiano-carranza/" class="alcaldia-card-enhanced">
+            <div class="alcaldia-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            </div>
+            <div class="alcaldia-info">
+              <h3>Venustiano Carranza</h3>
+              <span>7 escuelas</span>
+            </div>
+          </a>
+          <!-- Xochimilco -->
+          <a href="/cdmx/xochimilco/" class="alcaldia-card-enhanced">
+            <div class="alcaldia-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            </div>
+            <div class="alcaldia-info">
+              <h3>Xochimilco</h3>
+              <span>6 escuelas</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Info Section -->
+    <section class="info-section-enhanced">
+      <div class="container">
+        <div class="info-grid">
+          <div class="info-block">
+            <h2>Escuelas de Manejo en CDMX: Todo lo que Debes Saber</h2>
+            <p>La <strong>Ciudad de Mexico</strong> cuenta con mas de 120 escuelas de manejo registradas, convirtiendola en la entidad con mayor oferta de autoescuelas en el pais.</p>
+
+            <h3>Requisitos para licencia de conducir en CDMX</h3>
+            <ul>
+              <li>Identificacion oficial vigente (INE/IFE)</li>
+              <li>Comprobante de domicilio reciente</li>
+              <li>CURP</li>
+              <li>Examen medico (se realiza en el modulo)</li>
+            </ul>
+
+            <h3>Por que elegir una escuela verificada</h3>
+            <p>Las escuelas verificadas en nuestro directorio cuentan con certificacion SEMOVI, vehiculos con doble control, instructores capacitados y seguro de accidentes durante las practicas.</p>
+          </div>
+
+          <div class="info-card">
+            <h3>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+              Precios Referenciales
+            </h3>
+            <ul class="price-list">
+              <li class="price-item">
+                <span class="price-item-name">Curso basico (6-8 hrs)</span>
+                <span class="price-item-value">$2,350 - $3,500</span>
+              </li>
+              <li class="price-item">
+                <span class="price-item-name">Curso completo (10-15 hrs)</span>
+                <span class="price-item-value">$3,500 - $5,000</span>
+              </li>
+              <li class="price-item">
+                <span class="price-item-name">Curso intensivo (20+ hrs)</span>
+                <span class="price-item-value">$5,000 - $7,500</span>
+              </li>
+              <li class="price-item">
+                <span class="price-item-name">Clase individual (1 hr)</span>
+                <span class="price-item-value">$400 - $600</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section section-cta">
+      <div class="container">
+        <div class="cta-content">
+          <h2 class="cta-title">Tienes una Escuela de Manejo en CDMX?</h2>
+          <p class="cta-text">Registra tu escuela gratis y llega a miles de personas buscando aprender a manejar.</p>
+          <a href="/registrar-escuela/" class="btn btn-white btn-lg">Registrar mi Escuela Gratis</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <div id="esdema-footer"></div>
+
+  <!-- Scripts -->
+  <script src="/js/components.js"></script>
+  <script src="/js/app.js" defer></script>
+
+</body>
+</html>

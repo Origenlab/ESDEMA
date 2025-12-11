@@ -1,0 +1,40 @@
+# ESDEMA - Directorio de Escuelas de Manejo en México
+# https://www.robotstxt.org/
+
+# Allow all search engines
+User-agent: *
+Allow: /
+
+# Disallow admin/private areas (when implemented)
+Disallow: /admin/
+Disallow: /api/
+Disallow: /private/
+
+# Crawl-delay for polite crawling
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://esdema.mx/sitemap.xml
+
+# Google specific
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Bing specific
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Block AI training bots (optional - remove if you want AI indexing)
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /

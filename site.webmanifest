@@ -1,0 +1,57 @@
+{
+  "name": "ESDEMA - Escuelas de Manejo en México",
+  "short_name": "ESDEMA",
+  "description": "El directorio más completo de escuelas de manejo en México. Encuentra, compara y elige con confianza.",
+  "start_url": "/?source=pwa",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0ea5e9",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "es-MX",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "categories": ["education", "business", "lifestyle"],
+  "screenshots": [
+    {
+      "src": "img/screenshots/home.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "label": "Página principal de ESDEMA"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Buscar Escuelas",
+      "short_name": "Buscar",
+      "description": "Buscar escuelas de manejo",
+      "url": "/#buscar",
+      "icons": [{ "src": "icon.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "CDMX",
+      "short_name": "CDMX",
+      "description": "Escuelas en Ciudad de México",
+      "url": "/cdmx/",
+      "icons": [{ "src": "icon.png", "sizes": "192x192" }]
+    }
+  ]
+}
