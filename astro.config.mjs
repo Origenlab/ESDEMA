@@ -2,7 +2,7 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://escuelademanejo.mx',
+  site: 'https://escuelamanejo.mx',
   trailingSlash: 'always',
   integrations: [sitemap()],
   markdown: {
