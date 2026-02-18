@@ -10,6 +10,7 @@ permissions:
   contents: read
   pages: write
   id-token: write
+  actions: write
 
 concurrency:
   group: pages
@@ -35,12 +36,38 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          curl -sS -L \
+          set +e
+          PAGES_RESPONSE=$(curl --fail-with-body -sS -L \
             -X PUT \
             -H "Accept: application/vnd.github+json" \
             -H "Authorization: Bearer ${GH_TOKEN}" \
             "https://api.github.com/repos/${{ github.repository }}/pages" \
-            -d '{"build_type":"workflow"}'
+            -d '{"build_type":"workflow"}' 2>&1)
+          PAGES_EXIT=$?
+          if [ "${PAGES_EXIT}" -ne 0 ]; then
+            echo "::warning::Could not enforce GitHub Pages build_type=workflow."
+            echo "${PAGES_RESPONSE}"
+          else
+            echo "${PAGES_RESPONSE}"
+          fi
+
+      - name: Try disabling legacy Pages workflow
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set +e
+          DISABLE_RESPONSE=$(curl --fail-with-body -sS -L \
+            -X PUT \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer ${GH_TOKEN}" \
+            "https://api.github.com/repos/${{ github.repository }}/actions/workflows/214904562/disable" 2>&1)
+          DISABLE_EXIT=$?
+          if [ "${DISABLE_EXIT}" -ne 0 ]; then
+            echo "::warning::Could not disable legacy pages-build-deployment workflow."
+            echo "${DISABLE_RESPONSE}"
+          else
+            echo "Legacy pages-build-deployment workflow disabled."
+          fi
 
       - name: Install dependencies
         run: npm ci
