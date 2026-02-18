@@ -11,9 +11,8 @@ const posts = (await getCollection('blog')).sort(
 
 const escuelasDestacadas = [...escuelas]
   .sort((a, b) => b.data.rating - a.data.rating || b.data.totalResenas - a.data.totalResenas)
-  .slice(0, 4);
+  .slice(0, 6);
 
-// Extraer testimonios de las escuelas
 const testimonios = escuelas.flatMap(e =>
   e.data.resenas.slice(0, 1).map(r => ({
     ...r,
@@ -30,150 +29,229 @@ const totalResenas = escuelas.reduce((acc, e) => acc + e.data.totalResenas, 0);
   description="Encuentra las mejores escuelas de manejo cerca de ti. Compara precios, lee resenas verificadas y contacta por WhatsApp. Directorio profesional con escuelas en CDMX y todo Mexico."
   canonicalPath="/"
 >
-  <!-- Hero Section -->
-  <section class="hero hero-home">
+  <!-- Hero Section - Gama Style -->
+  <section class="hero-gama">
     <div class="container">
-      <div class="hero-content">
-        <div class="hero-badge">
-          <span class="hero-badge-dot"></span>
-          <span>+{escuelas.length} escuelas verificadas</span>
-        </div>
-
-        <h1>
-          Encuentra la mejor <span class="highlight">escuela de manejo</span> cerca de ti
-        </h1>
-
-        <p class="hero-description">
-          Directorio profesional de escuelas de manejo en Mexico. Compara precios,
-          lee resenas reales y contacta directamente por WhatsApp.
-        </p>
-
-        <div class="hero-actions">
-          <a href="/cdmx/" class="btn btn-primary btn-lg">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-              <circle cx="12" cy="10" r="3"/>
+      <div class="hero-gama-grid">
+        <div class="hero-gama-content">
+          <div class="hero-gama-badge">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+              <polyline points="22 4 12 14.01 9 11.01"/>
             </svg>
-            Explorar CDMX
-          </a>
-          <a href="/estados/" class="btn btn-secondary btn-lg">
-            Ver todos los estados
-          </a>
+            <span>Directorio #1 de Mexico</span>
+          </div>
+
+          <h1>
+            Encuentra tu <span class="text-gradient">escuela de manejo</span> ideal
+          </h1>
+
+          <p class="hero-gama-description">
+            El directorio mas completo de escuelas de manejo en Mexico.
+            Compara precios, lee resenas reales y contacta directamente por WhatsApp.
+          </p>
+
+          <div class="hero-gama-actions">
+            <a href="/cdmx/" class="btn btn-primary btn-lg">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+              Explorar CDMX
+            </a>
+            <a href="https://wa.me/525512345678" class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/>
+              </svg>
+              Cotizar por WhatsApp
+            </a>
+          </div>
+
+          <div class="hero-gama-trust">
+            <div class="hero-gama-trust-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                <polyline points="22 4 12 14.01 9 11.01"/>
+              </svg>
+              <span>Escuelas verificadas</span>
+            </div>
+            <div class="hero-gama-trust-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+              <span>Informacion confiable</span>
+            </div>
+            <div class="hero-gama-trust-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72"/>
+              </svg>
+              <span>Contacto directo</span>
+            </div>
+          </div>
         </div>
 
-        <div class="hero-stats">
-          <div class="hero-stat">
-            <div class="hero-stat-value">{escuelas.length}+</div>
-            <div class="hero-stat-label">Escuelas verificadas</div>
-          </div>
-          <div class="hero-stat">
-            <div class="hero-stat-value">{alcaldias.length}</div>
-            <div class="hero-stat-label">Zonas cubiertas</div>
-          </div>
-          <div class="hero-stat">
-            <div class="hero-stat-value">{totalResenas}+</div>
-            <div class="hero-stat-label">Resenas reales</div>
+        <div class="hero-gama-visual">
+          <div class="hero-gama-stats-grid">
+            <div class="hero-gama-stat">
+              <div class="hero-gama-stat-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/>
+                  <circle cx="7" cy="17" r="2"/>
+                  <path d="M9 17h6"/>
+                  <circle cx="17" cy="17" r="2"/>
+                </svg>
+              </div>
+              <div class="hero-gama-stat-value">{escuelas.length}+</div>
+              <div class="hero-gama-stat-label">Escuelas</div>
+            </div>
+            <div class="hero-gama-stat">
+              <div class="hero-gama-stat-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+              </div>
+              <div class="hero-gama-stat-value">{alcaldias.length}</div>
+              <div class="hero-gama-stat-label">Zonas</div>
+            </div>
+            <div class="hero-gama-stat">
+              <div class="hero-gama-stat-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                </svg>
+              </div>
+              <div class="hero-gama-stat-value">{totalResenas}+</div>
+              <div class="hero-gama-stat-label">Resenas</div>
+            </div>
+            <div class="hero-gama-stat">
+              <div class="hero-gama-stat-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                  <circle cx="9" cy="7" r="4"/>
+                  <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                </svg>
+              </div>
+              <div class="hero-gama-stat-value">5K+</div>
+              <div class="hero-gama-stat-label">Alumnos</div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Trust Badges -->
-  <section class="section-sm section-alt">
-    <div class="container">
-      <div class="trust-badges">
-        <div class="trust-badge">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-            <polyline points="22 4 12 14.01 9 11.01"/>
-          </svg>
-          <span>Escuelas verificadas</span>
-        </div>
-        <div class="trust-badge">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-          </svg>
-          <span>Informacion confiable</span>
-        </div>
-        <div class="trust-badge">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
-          </svg>
-          <span>Datos protegidos</span>
-        </div>
-        <div class="trust-badge">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72"/>
-          </svg>
-          <span>Contacto directo</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- How It Works -->
+  <!-- Services Section - Gama Style -->
   <section class="section">
     <div class="container">
       <div class="section-header">
-        <h2>Como funciona</h2>
-        <p>Encontrar tu escuela de manejo ideal es facil con ESDEMA</p>
+        <span class="section-badge">Nuestros Servicios</span>
+        <h2>Todo lo que necesitas para aprender a manejar</h2>
+        <p>Encuentra escuelas con los servicios que mejor se adapten a tus necesidades</p>
       </div>
 
-      <div class="steps-grid">
-        <article class="step">
-          <div class="step-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="11" cy="11" r="8"/>
-              <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+      <div class="services-grid">
+        <article class="service-card">
+          <div class="service-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/>
+              <circle cx="7" cy="17" r="2"/>
+              <path d="M9 17h6"/>
+              <circle cx="17" cy="17" r="2"/>
             </svg>
           </div>
-          <h3>Busca por zona</h3>
-          <p>Explora escuelas de manejo por estado, alcaldia o colonia. Encuentra opciones cerca de tu ubicacion.</p>
+          <h3>Clases Practicas</h3>
+          <p>Aprende con vehiculos modernos y en condiciones reales de trafico con instructores certificados.</p>
         </article>
 
-        <article class="step">
-          <div class="step-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="18" y1="20" x2="18" y2="10"/>
-              <line x1="12" y1="20" x2="12" y2="4"/>
-              <line x1="6" y1="20" x2="6" y2="14"/>
+        <article class="service-card">
+          <div class="service-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+              <line x1="8" y1="21" x2="16" y2="21"/>
+              <line x1="12" y1="17" x2="12" y2="21"/>
             </svg>
           </div>
-          <h3>Compara opciones</h3>
-          <p>Revisa precios, servicios, horarios y resenas de alumnos reales para tomar la mejor decision.</p>
+          <h3>Clases Teoricas</h3>
+          <p>Conoce las senales de transito, reglamentos viales y todo lo necesario para tu examen.</p>
         </article>
 
-        <article class="step">
-          <div class="step-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72"/>
+        <article class="service-card">
+          <div class="service-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
             </svg>
           </div>
-          <h3>Contacta directo</h3>
-          <p>Comunicate directamente con la escuela via WhatsApp o telefono. Sin intermediarios.</p>
+          <h3>Horarios Flexibles</h3>
+          <p>Encuentra escuelas con horarios que se adapten a tu rutina, incluyendo fines de semana.</p>
+        </article>
+
+        <article class="service-card">
+          <div class="service-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+            </svg>
+          </div>
+          <h3>Automatico y Estandar</h3>
+          <p>Elige el tipo de transmision que prefieras aprender. Ambas opciones disponibles.</p>
+        </article>
+
+        <article class="service-card">
+          <div class="service-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+              <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+            </svg>
+          </div>
+          <h3>Instructores Certificados</h3>
+          <p>Profesionales con experiencia y certificaciones oficiales para garantizar tu aprendizaje.</p>
+        </article>
+
+        <article class="service-card">
+          <div class="service-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+              <line x1="16" y1="2" x2="16" y2="6"/>
+              <line x1="8" y1="2" x2="8" y2="6"/>
+              <line x1="3" y1="10" x2="21" y2="10"/>
+              <path d="M8 14h.01"/>
+              <path d="M12 14h.01"/>
+              <path d="M16 14h.01"/>
+              <path d="M8 18h.01"/>
+              <path d="M12 18h.01"/>
+              <path d="M16 18h.01"/>
+            </svg>
+          </div>
+          <h3>Paquetes Personalizados</h3>
+          <p>Desde cursos intensivos hasta programas completos. Encuentra el paquete ideal para ti.</p>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- Featured Schools -->
-  <section class="section section-alt">
+  <!-- Featured Schools - Gama Style -->
+  <section class="section section-gray">
     <div class="container">
       <div class="section-header">
-        <h2>Escuelas destacadas</h2>
-        <p>Las escuelas mejor valoradas por nuestros usuarios</p>
+        <span class="section-badge">Escuelas Destacadas</span>
+        <h2>Las mejor valoradas por nuestros usuarios</h2>
+        <p>Escuelas verificadas con las mejores resenas y calificaciones</p>
       </div>
 
-      <div class="grid grid-2">
+      <div class="schools-grid">
         {escuelasDestacadas.map((escuela) => (
-          <article class="card school-card">
+          <article class="school-card">
             {escuela.data.badges.includes('Verificada') && (
-              <span class="school-card-badge">Verificada</span>
+              <span class="school-card-badge">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+                Verificada
+              </span>
             )}
             <div class="school-card-image">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                 <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/>
                 <circle cx="7" cy="17" r="2"/>
                 <path d="M9 17h6"/>
@@ -182,7 +260,7 @@ const totalResenas = escuelas.reduce((acc, e) => acc + e.data.totalResenas, 0);
             </div>
             <div class="school-card-content">
               <div class="school-card-location">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
                   <circle cx="12" cy="10" r="3"/>
                 </svg>
@@ -202,8 +280,19 @@ const totalResenas = escuelas.reduce((acc, e) => acc + e.data.totalResenas, 0);
                   <small>({escuela.data.totalResenas} resenas)</small>
                 </div>
                 <div class="school-card-price">
-                  Desde {escuela.data.precioDesde}
+                  Desde <strong>{escuela.data.precioDesde}</strong>
                 </div>
+              </div>
+              <div class="school-card-actions">
+                <a href={`/${escuela.data.estadoSlug}/${escuela.data.alcaldiaSlug}/${escuela.slug}/`} class="btn btn-sm btn-outline">
+                  Ver detalles
+                </a>
+                <a href={`https://wa.me/52${escuela.data.telefono.replace(/\D/g, '')}`} class="btn btn-sm btn-whatsapp" target="_blank" rel="noopener">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/>
+                  </svg>
+                  Cotizar
+                </a>
               </div>
             </div>
           </article>
@@ -213,7 +302,7 @@ const totalResenas = escuelas.reduce((acc, e) => acc + e.data.totalResenas, 0);
       <div class="text-center mt-xl">
         <a href="/cdmx/" class="btn btn-primary">
           Ver todas las escuelas
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <line x1="5" y1="12" x2="19" y2="12"/>
             <polyline points="12 5 19 12 12 19"/>
           </svg>
@@ -222,41 +311,106 @@ const totalResenas = escuelas.reduce((acc, e) => acc + e.data.totalResenas, 0);
     </div>
   </section>
 
-  <!-- Zones / States -->
+  <!-- How It Works - Gama Style -->
   <section class="section">
     <div class="container">
       <div class="section-header">
-        <h2>Explora por zona</h2>
+        <span class="section-badge">Como Funciona</span>
+        <h2>Encontrar tu escuela ideal es muy facil</h2>
+        <p>Sigue estos sencillos pasos para comenzar tu aprendizaje</p>
+      </div>
+
+      <div class="steps-grid">
+        <article class="step">
+          <div class="step-number">1</div>
+          <div class="step-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"/>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+          </div>
+          <h3>Busca por zona</h3>
+          <p>Explora escuelas de manejo por estado, alcaldia o colonia. Encuentra opciones cerca de ti.</p>
+        </article>
+
+        <article class="step">
+          <div class="step-number">2</div>
+          <div class="step-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="18" y1="20" x2="18" y2="10"/>
+              <line x1="12" y1="20" x2="12" y2="4"/>
+              <line x1="6" y1="20" x2="6" y2="14"/>
+            </svg>
+          </div>
+          <h3>Compara opciones</h3>
+          <p>Revisa precios, servicios, horarios y resenas de alumnos reales para tomar la mejor decision.</p>
+        </article>
+
+        <article class="step">
+          <div class="step-number">3</div>
+          <div class="step-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72"/>
+            </svg>
+          </div>
+          <h3>Contacta directo</h3>
+          <p>Comunicate directamente con la escuela via WhatsApp o telefono. Sin intermediarios.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Zones / States - Gama Style -->
+  <section class="section section-gray">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Cobertura Nacional</span>
+        <h2>Explora escuelas por zona</h2>
         <p>Encuentra escuelas de manejo en tu ciudad o estado</p>
       </div>
 
-      <div class="grid grid-3">
+      <div class="zones-grid">
         {estados.map((estado) => (
-          <article class="location-card">
-            <div class="location-card-header">
-              <div class="location-card-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <article class="zone-card">
+            <div class="zone-card-header">
+              <div class="zone-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
                   <circle cx="12" cy="10" r="3"/>
                 </svg>
               </div>
-              <h3>
-                <a href={`/${estado.slug}/`}>{estado.data.nombre}</a>
-              </h3>
+              <div>
+                <h3>
+                  <a href={`/${estado.slug}/`}>{estado.data.nombre}</a>
+                </h3>
+                <span class="zone-card-count">{estado.data.escuelasAprox}+ escuelas</span>
+              </div>
             </div>
             <p>{estado.data.descripcionCorta}</p>
-            <div class="location-card-stats">
-              <span><strong>{estado.data.alcaldiasAprox}</strong> zonas</span>
-              <span><strong>{estado.data.escuelasAprox}+</strong> escuelas</span>
+            <div class="zone-card-footer">
+              <span class="zone-card-stat">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="4" y="2" width="16" height="20" rx="2" ry="2"/>
+                  <path d="M9 22v-4h6v4"/>
+                </svg>
+                {estado.data.alcaldiasAprox} zonas
+              </span>
+              <a href={`/${estado.slug}/`} class="zone-card-link">
+                Ver escuelas
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="5" y1="12" x2="19" y2="12"/>
+                  <polyline points="12 5 19 12 12 19"/>
+                </svg>
+              </a>
             </div>
           </article>
         ))}
 
-        {alcaldias.slice(0, 2).map((alcaldia) => (
-          <article class="location-card">
-            <div class="location-card-header">
-              <div class="location-card-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        {alcaldias.slice(0, 3).map((alcaldia) => (
+          <article class="zone-card">
+            <div class="zone-card-header">
+              <div class="zone-card-icon zone-card-icon-alt">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <rect x="4" y="2" width="16" height="20" rx="2" ry="2"/>
                   <path d="M9 22v-4h6v4"/>
                   <path d="M8 6h.01"/>
@@ -270,27 +424,49 @@ const totalResenas = escuelas.reduce((acc, e) => acc + e.data.totalResenas, 0);
                   <path d="M8 14h.01"/>
                 </svg>
               </div>
-              <h3>
-                <a href={`/cdmx/${alcaldia.slug.replace('cdmx-', '')}/`}>
-                  {alcaldia.data.nombre}
-                </a>
-              </h3>
+              <div>
+                <h3>
+                  <a href={`/cdmx/${alcaldia.slug.replace('cdmx-', '')}/`}>
+                    {alcaldia.data.nombre}
+                  </a>
+                </h3>
+                <span class="zone-card-count">{alcaldia.data.escuelasAprox}+ escuelas</span>
+              </div>
             </div>
             <p>{alcaldia.data.descripcionCorta}</p>
-            <div class="location-card-stats">
-              <span><strong>{alcaldia.data.coloniasAprox}</strong> colonias</span>
-              <span><strong>{alcaldia.data.escuelasAprox}+</strong> escuelas</span>
+            <div class="zone-card-footer">
+              <span class="zone-card-stat">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                  <polyline points="9 22 9 12 15 12 15 22"/>
+                </svg>
+                {alcaldia.data.coloniasAprox} colonias
+              </span>
+              <a href={`/cdmx/${alcaldia.slug.replace('cdmx-', '')}/`} class="zone-card-link">
+                Ver escuelas
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="5" y1="12" x2="19" y2="12"/>
+                  <polyline points="12 5 19 12 12 19"/>
+                </svg>
+              </a>
             </div>
           </article>
         ))}
       </div>
+
+      <div class="text-center mt-xl">
+        <a href="/estados/" class="btn btn-outline">
+          Ver todos los estados
+        </a>
+      </div>
     </div>
   </section>
 
-  <!-- Testimonials -->
-  <section class="section section-alt">
+  <!-- Testimonials - Gama Style -->
+  <section class="section">
     <div class="container">
       <div class="section-header">
+        <span class="section-badge">Testimonios</span>
         <h2>Lo que dicen nuestros usuarios</h2>
         <p>Resenas reales de alumnos que encontraron su escuela en ESDEMA</p>
       </div>
@@ -298,15 +474,7 @@ const totalResenas = escuelas.reduce((acc, e) => acc + e.data.totalResenas, 0);
       <div class="testimonials-grid">
         {testimonios.map((testimonio) => (
           <article class="testimonial">
-            <div class="testimonial-stars">
-              {[...Array(testimonio.rating)].map(() => (
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-                </svg>
-              ))}
-            </div>
-            <p class="testimonial-text">"{testimonio.texto}"</p>
-            <div class="testimonial-author">
+            <div class="testimonial-header">
               <div class="testimonial-avatar">
                 {testimonio.autor.charAt(0)}
               </div>
@@ -314,6 +482,21 @@ const totalResenas = escuelas.reduce((acc, e) => acc + e.data.totalResenas, 0);
                 <strong>{testimonio.autor}</strong>
                 <span>{testimonio.escuela}</span>
               </div>
+              <div class="testimonial-rating">
+                {[...Array(testimonio.rating)].map(() => (
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                  </svg>
+                ))}
+              </div>
+            </div>
+            <p class="testimonial-text">"{testimonio.texto}"</p>
+            <div class="testimonial-footer">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+              <span>{testimonio.zona}</span>
             </div>
           </article>
         ))}
@@ -321,69 +504,104 @@ const totalResenas = escuelas.reduce((acc, e) => acc + e.data.totalResenas, 0);
     </div>
   </section>
 
-  <!-- Blog / Resources -->
-  <section class="section">
+  <!-- Blog / Resources - Gama Style -->
+  <section class="section section-gray">
     <div class="container">
       <div class="section-header">
-        <h2>Recursos y guias</h2>
-        <p>Consejos utiles para aprender a manejar con confianza</p>
+        <span class="section-badge">Blog</span>
+        <h2>Recursos y guias utiles</h2>
+        <p>Consejos practicos para aprender a manejar con confianza</p>
       </div>
 
-      <div class="grid grid-3">
+      <div class="blog-grid">
         {posts.map((post) => (
           <article class="blog-card">
-            <div class="blog-card-image"></div>
+            <div class="blog-card-image">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                <circle cx="8.5" cy="8.5" r="1.5"/>
+                <polyline points="21 15 16 10 5 21"/>
+              </svg>
+            </div>
             <div class="blog-card-content">
-              <span class="badge badge-primary blog-card-category">{post.data.category}</span>
+              <span class="blog-card-category">{post.data.category}</span>
               <h3>
                 <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
               </h3>
               <p>{post.data.description}</p>
+              <a href={`/blog/${post.slug}/`} class="blog-card-link">
+                Leer articulo
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="5" y1="12" x2="19" y2="12"/>
+                  <polyline points="12 5 19 12 12 19"/>
+                </svg>
+              </a>
             </div>
           </article>
         ))}
       </div>
 
       <div class="text-center mt-xl">
-        <a href="/blog/" class="btn btn-secondary">
+        <a href="/blog/" class="btn btn-outline">
           Ver todos los articulos
         </a>
       </div>
     </div>
   </section>
 
-  <!-- FAQ Preview -->
-  <section class="section section-alt">
+  <!-- FAQ Preview - Gama Style -->
+  <section class="section">
     <div class="container">
       <div class="section-header">
+        <span class="section-badge">FAQ</span>
         <h2>Preguntas frecuentes</h2>
         <p>Resolvemos tus dudas sobre escuelas de manejo</p>
       </div>
 
       <div class="faq-grid">
         <details class="faq-item">
-          <summary>¿Como elijo la mejor escuela de manejo?</summary>
+          <summary>
+            <span>¿Como elijo la mejor escuela de manejo?</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </summary>
           <div class="faq-item-content">
             <p>Considera factores como ubicacion, precios, horarios flexibles, tipo de vehiculos (automatico o estandar), resenas de otros alumnos y si cuentan con instructores certificados. En ESDEMA puedes comparar todas estas caracteristicas facilmente.</p>
           </div>
         </details>
 
         <details class="faq-item">
-          <summary>¿Cuanto cuesta aprender a manejar?</summary>
+          <summary>
+            <span>¿Cuanto cuesta aprender a manejar?</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </summary>
           <div class="faq-item-content">
             <p>Los precios varian segun la ciudad y el paquete que elijas. En CDMX, los cursos basicos van desde $1,200 MXN hasta $5,000 MXN aproximadamente. Recomendamos comparar varias opciones antes de decidir.</p>
           </div>
         </details>
 
         <details class="faq-item">
-          <summary>¿Es mejor aprender en automatico o estandar?</summary>
+          <summary>
+            <span>¿Es mejor aprender en automatico o estandar?</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </summary>
           <div class="faq-item-content">
             <p>Depende de tus necesidades. Si planeas manejar solo vehiculos automaticos, es mas facil empezar con ellos. Sin embargo, aprender en estandar te da mas versatilidad. Lee nuestro articulo completo sobre este tema en el blog.</p>
           </div>
         </details>
 
         <details class="faq-item">
-          <summary>¿Las escuelas listadas estan verificadas?</summary>
+          <summary>
+            <span>¿Las escuelas listadas estan verificadas?</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </summary>
           <div class="faq-item-content">
             <p>Si, en ESDEMA verificamos la informacion de contacto, ubicacion y servicios de cada escuela. Las escuelas con la insignia "Verificada" han pasado por un proceso adicional de validacion.</p>
           </div>
@@ -391,29 +609,58 @@ const totalResenas = escuelas.reduce((acc, e) => acc + e.data.totalResenas, 0);
       </div>
 
       <div class="text-center mt-xl">
-        <a href="/faq/" class="btn btn-secondary">
+        <a href="/faq/" class="btn btn-outline">
           Ver todas las preguntas
         </a>
       </div>
     </div>
   </section>
 
-  <!-- CTA Section -->
+  <!-- CTA Section - Gama Style -->
   <section class="cta-section">
     <div class="container">
       <div class="cta-content">
+        <span class="cta-badge">Comienza Hoy</span>
         <h2>¿Listo para aprender a manejar?</h2>
         <p>
           Encuentra la escuela perfecta para ti. Compara precios,
-          lee resenas y contacta directamente.
+          lee resenas y contacta directamente por WhatsApp.
         </p>
         <div class="cta-actions">
-          <a href="/cdmx/" class="btn btn-accent btn-lg">
-            Explorar escuelas
+          <a href="/cdmx/" class="btn btn-white btn-lg">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+            Explorar Escuelas
           </a>
-          <a href="/contacto/" class="btn btn-secondary btn-lg">
-            Contactanos
+          <a href="https://wa.me/525512345678" class="btn btn-whatsapp-light btn-lg" target="_blank" rel="noopener">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/>
+            </svg>
+            Cotizar por WhatsApp
           </a>
+        </div>
+        <div class="cta-trust">
+          <div class="cta-trust-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+              <polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+            <span>+{escuelas.length} escuelas verificadas</span>
+          </div>
+          <div class="cta-trust-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+            </svg>
+            <span>{totalResenas}+ resenas reales</span>
+          </div>
+          <div class="cta-trust-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+            <span>100% confiable</span>
+          </div>
         </div>
       </div>
     </div>
@@ -421,19 +668,310 @@ const totalResenas = escuelas.reduce((acc, e) => acc + e.data.totalResenas, 0);
 </BaseLayout>
 
 <style>
-  /* Page-specific styles */
-  .hero-content {
+  /* Hero Gama Style */
+  .hero-gama {
+    background: linear-gradient(135deg, var(--primary-50) 0%, white 50%, var(--accent-50) 100%);
+    padding: var(--space-3xl) 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-gama::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background: radial-gradient(circle at 70% 30%, var(--primary-100) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .hero-gama-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+    align-items: center;
+  }
+
+  @media (min-width: 1024px) {
+    .hero-gama-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .hero-gama-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-sm) var(--space-md);
+    background: var(--primary-100);
+    color: var(--primary-700);
+    border-radius: var(--radius-full);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    margin-bottom: var(--space-lg);
+  }
+
+  .hero-gama-content h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.1;
+    margin-bottom: var(--space-lg);
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, var(--primary-600) 0%, var(--accent-600) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-gama-description {
+    font-size: var(--text-lg);
+    color: var(--gray-600);
+    margin-bottom: var(--space-xl);
+    max-width: 540px;
+  }
+
+  .hero-gama-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+    margin-bottom: var(--space-xl);
+  }
+
+  .hero-gama-trust {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-lg);
+  }
+
+  .hero-gama-trust-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    font-size: var(--text-sm);
+    color: var(--gray-600);
+  }
+
+  .hero-gama-trust-item svg {
+    width: 16px;
+    height: 16px;
+    color: var(--primary-600);
+  }
+
+  .hero-gama-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-lg);
+  }
+
+  .hero-gama-stat {
+    background: white;
+    padding: var(--space-xl);
+    border-radius: var(--radius-xl);
+    text-align: center;
+    box-shadow: var(--shadow-lg);
+    transition: var(--transition-base);
+  }
+
+  .hero-gama-stat:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
+  }
+
+  .hero-gama-stat-icon {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto var(--space-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary-100);
+    border-radius: var(--radius-lg);
+  }
+
+  .hero-gama-stat-icon svg {
+    width: 24px;
+    height: 24px;
+    color: var(--primary-600);
+  }
+
+  .hero-gama-stat-value {
+    font-size: var(--text-3xl);
+    font-weight: 800;
+    color: var(--gray-900);
+  }
+
+  .hero-gama-stat-label {
+    font-size: var(--text-sm);
+    color: var(--gray-500);
+    margin-top: var(--space-xs);
+  }
+
+  /* Section Badge */
+  .section-badge {
+    display: inline-block;
+    padding: var(--space-xs) var(--space-md);
+    background: var(--primary-100);
+    color: var(--primary-700);
+    border-radius: var(--radius-full);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    margin-bottom: var(--space-md);
+  }
+
+  /* Services Grid */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-lg);
+  }
+
+  /* Schools Grid */
+  .schools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: var(--space-lg);
+  }
+
+  .school-card-actions {
+    display: flex;
+    gap: var(--space-sm);
+    margin-top: var(--space-md);
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--gray-100);
+  }
+
+  .school-card-actions .btn {
+    flex: 1;
+    justify-content: center;
+  }
+
+  /* Steps */
+  .step-number {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 32px;
+    height: 32px;
+    background: var(--primary-600);
+    color: white;
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: var(--text-sm);
+  }
+
+  .step {
+    position: relative;
+  }
+
+  /* Zones Grid */
+  .zones-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-lg);
+  }
+
+  /* Blog Grid */
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--space-lg);
+  }
+
+  .blog-card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    color: var(--primary-600);
+    font-weight: 600;
+    font-size: var(--text-sm);
+    margin-top: var(--space-md);
+    transition: var(--transition-base);
+  }
+
+  .blog-card-link:hover {
+    color: var(--primary-700);
+    gap: var(--space-sm);
+  }
+
+  /* CTA Section */
+  .cta-badge {
+    display: inline-block;
+    padding: var(--space-xs) var(--space-md);
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border-radius: var(--radius-full);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    margin-bottom: var(--space-lg);
+  }
+
+  .btn-white {
+    background: white;
+    color: var(--primary-700);
+  }
+
+  .btn-white:hover {
+    background: var(--gray-100);
+  }
+
+  .btn-whatsapp-light {
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .btn-whatsapp-light:hover {
+    background: rgba(255, 255, 255, 0.25);
+  }
+
+  .cta-trust {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-xl);
+    margin-top: var(--space-2xl);
+    padding-top: var(--space-xl);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .cta-trust-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    color: rgba(255, 255, 255, 0.9);
+    font-size: var(--text-sm);
+  }
+
+  .cta-trust-item svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  /* Animations */
+  .hero-gama-content {
     animation: fadeInUp 0.6s ease-out;
   }
 
-  .steps-grid .step {
-    animation: fadeInUp 0.6s ease-out;
+  .hero-gama-visual {
+    animation: fadeInUp 0.6s ease-out 0.2s;
     animation-fill-mode: both;
   }
 
-  .steps-grid .step:nth-child(1) { animation-delay: 0.1s; }
-  .steps-grid .step:nth-child(2) { animation-delay: 0.2s; }
-  .steps-grid .step:nth-child(3) { animation-delay: 0.3s; }
+  .service-card,
+  .school-card,
+  .zone-card,
+  .testimonial,
+  .blog-card,
+  .step {
+    animation: fadeInUp 0.5s ease-out;
+    animation-fill-mode: both;
+  }
 
   @keyframes fadeInUp {
     from {
