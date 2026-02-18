@@ -1,0 +1,104 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const estados = await getCollection('estados');
+const alcaldias = await getCollection('alcaldias');
+const escuelas = await getCollection('escuelas');
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime()
+);
+
+const escuelasDestacadas = [...escuelas]
+  .sort((a, b) => b.data.rating - a.data.rating || b.data.totalResenas - a.data.totalResenas)
+  .slice(0, 4);
+---
+
+<BaseLayout
+  title="ESDEMA | Escuelas de Manejo en Mexico"
+  description="Directorio profesional de escuelas de manejo. Compara precios, revisa resenas y contacta por WhatsApp."
+  canonicalPath="/"
+>
+  <section class="hero hero-home">
+    <div class="container">
+      <p class="eyebrow">Directorio profesional</p>
+      <h1>Encuentra escuelas de manejo por alcaldia y colonia</h1>
+      <p class="hero-copy">
+        Nueva arquitectura con Astro y Markdown para publicar mas rapido, sostener calidad SEO local y escalar contenidos
+        transaccionales sin duplicar HTML.
+      </p>
+      <div class="hero-actions">
+        <a class="button" href="/cdmx/">Explorar CDMX</a>
+        <a class="button button-ghost" href="/estados/">Ver estados</a>
+      </div>
+      <div class="hero-kpis">
+        <article class="panel kpi">
+          <strong>{escuelas.length}</strong>
+          <span>Perfiles reales migrados</span>
+        </article>
+        <article class="panel kpi">
+          <strong>{alcaldias.length}</strong>
+          <span>Alcaldias estructuradas</span>
+        </article>
+        <article class="panel kpi">
+          <strong>{posts.length}</strong>
+          <span>Articulos editoriales</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>Escuelas destacadas</h2>
+      <div class="grid grid-2 school-grid">
+        {escuelasDestacadas.map((escuela) => (
+          <article class="panel school-card">
+            <p class="meta-chip">{escuela.data.alcaldiaSlug.replaceAll('-', ' ')}</p>
+            <h3>
+              <a href={`/${escuela.data.estadoSlug}/${escuela.data.alcaldiaSlug}/${escuela.slug}/`}>
+                {escuela.data.nombreComercial}
+              </a>
+            </h3>
+            <p class="meta">{escuela.data.colonia} · {escuela.data.precioRango}</p>
+            <p class="meta">{escuela.data.rating.toFixed(1)} de 5 ({escuela.data.totalResenas} resenas)</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>Estados publicados</h2>
+      <div class="grid grid-3">
+        {estados.map((estado) => (
+          <article class="panel card">
+            <h3>
+              <a href={`/${estado.slug}/`}>{estado.data.nombre}</a>
+            </h3>
+            <p class="meta">{estado.data.descripcionCorta}</p>
+            <p class="meta">{estado.data.alcaldiasAprox} zonas · {estado.data.escuelasAprox}+ escuelas</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>Contenido editorial</h2>
+      <div class="grid grid-3">
+        {posts.map((post) => (
+          <article class="panel card">
+            <p class="meta-chip">{post.data.category}</p>
+            <h3>
+              <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
+            </h3>
+            <p class="meta">{post.data.description}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

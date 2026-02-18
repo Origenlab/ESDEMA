@@ -1,0 +1,153 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+import JsonLd from '../../../components/JsonLd.astro';
+
+export async function getStaticPaths() {
+  const alcaldias = await getCollection('alcaldias');
+
+  return alcaldias.map((alcaldia) => ({
+    params: {
+      estado: alcaldia.data.estadoSlug,
+      alcaldia: alcaldia.slug
+    },
+    props: { alcaldia }
+  }));
+}
+
+const { alcaldia } = Astro.props;
+const { Content } = await render(alcaldia);
+
+const estados = await getCollection('estados');
+const estado = estados.find((item) => item.slug === alcaldia.data.estadoSlug);
+
+const escuelas = (await getCollection(
+  'escuelas',
+  (item) =>
+    item.data.estadoSlug === alcaldia.data.estadoSlug && item.data.alcaldiaSlug === alcaldia.slug
+)).sort((a, b) => b.data.rating - a.data.rating || b.data.totalResenas - a.data.totalResenas);
+
+const itemListSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: `Escuelas de Manejo en ${alcaldia.data.nombre}`,
+  description: alcaldia.data.seo.description,
+  url: new URL(alcaldia.data.seo.canonicalPath, Astro.site).toString(),
+  mainEntity: {
+    '@type': 'ItemList',
+    itemListElement: escuelas.map((escuela, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      url: new URL(
+        `/${escuela.data.estadoSlug}/${escuela.data.alcaldiaSlug}/${escuela.slug}/`,
+        Astro.site
+      ).toString(),
+      name: escuela.data.nombreComercial
+    }))
+  }
+};
+---
+
+<BaseLayout
+  title={alcaldia.data.seo.title}
+  description={alcaldia.data.seo.description}
+  canonicalPath={alcaldia.data.seo.canonicalPath}
+>
+  <JsonLd data={itemListSchema} />
+
+  <section class="section">
+    <div class="container">
+      <Breadcrumbs
+        items={[
+          { label: 'Inicio', href: '/' },
+          { label: estado?.data.nombre ?? alcaldia.data.estadoSlug.toUpperCase(), href: `/${alcaldia.data.estadoSlug}/` },
+          { label: alcaldia.data.nombre }
+        ]}
+      />
+
+      <h1>Escuelas de Manejo en {alcaldia.data.nombre}</h1>
+      <p class="meta">
+        Rango estimado: {alcaldia.data.precioDesde} a {alcaldia.data.precioHasta}. {alcaldia.data.escuelasCount} escuelas
+        registradas historicamente en esta zona.
+      </p>
+
+      <div class="grid grid-2">
+        <article class="panel">
+          <h2>Contexto local</h2>
+          <Content />
+
+          <h3>Vialidades clave para practica</h3>
+          <ul>
+            {alcaldia.data.vialidadesClave.map((vialidad) => (
+              <li>{vialidad}</li>
+            ))}
+          </ul>
+
+          <h3>Modulos de licencia cercanos</h3>
+          <ul>
+            {alcaldia.data.modulosLicencia.map((modulo) => (
+              <li>{modulo.nombre}: {modulo.direccion}</li>
+            ))}
+          </ul>
+        </article>
+
+        <aside class="panel">
+          <h2>Rangos de precio</h2>
+          <ul class="price-table">
+            {alcaldia.data.rangosPrecio.map((item) => (
+              <li>
+                <span>{item.concepto}</span>
+                <strong>{item.rango}</strong>
+              </li>
+            ))}
+          </ul>
+
+          <h3>Colonias de enfoque</h3>
+          <p class="meta">{alcaldia.data.colonias.join(', ')}</p>
+        </aside>
+      </div>
+
+      <h2>Escuelas publicadas</h2>
+      <div class="grid grid-2 school-grid">
+        {escuelas.map((escuela) => {
+          const whatsappMessage = encodeURIComponent(
+            `Hola, encontre su escuela en ESDEMA y me gustaria informacion sobre cursos de manejo.`
+          );
+          const whatsappUrl = `https://wa.me/${escuela.data.whatsapp}?text=${whatsappMessage}`;
+
+          return (
+            <article class="panel school-card">
+              <p class="meta-chip">{escuela.data.colonia}</p>
+              <h3>
+                <a href={`/${escuela.data.estadoSlug}/${escuela.data.alcaldiaSlug}/${escuela.slug}/`}>
+                  {escuela.data.nombreComercial}
+                </a>
+              </h3>
+              <p class="meta">{escuela.data.precioRango}</p>
+              <p class="meta">{escuela.data.rating.toFixed(1)} de 5 ({escuela.data.totalResenas} resenas)</p>
+              <div class="card-actions">
+                <a class="button button-sm" href={`/${escuela.data.estadoSlug}/${escuela.data.alcaldiaSlug}/${escuela.slug}/`}>
+                  Ver perfil
+                </a>
+                <a class="button button-sm button-ghost" href={whatsappUrl} target="_blank" rel="noreferrer">
+                  WhatsApp
+                </a>
+              </div>
+            </article>
+          );
+        })}
+      </div>
+
+      <h2>Preguntas frecuentes</h2>
+      <div class="grid faq-grid">
+        {alcaldia.data.faqs.map((faq) => (
+          <details class="panel faq-item">
+            <summary>{faq.pregunta}</summary>
+            <p>{faq.respuesta}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

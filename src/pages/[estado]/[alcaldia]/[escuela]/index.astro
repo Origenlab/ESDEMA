@@ -1,0 +1,191 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../../../components/Breadcrumbs.astro';
+import JsonLd from '../../../../components/JsonLd.astro';
+
+export async function getStaticPaths() {
+  const escuelas = await getCollection('escuelas');
+
+  return escuelas.map((escuela) => ({
+    params: {
+      estado: escuela.data.estadoSlug,
+      alcaldia: escuela.data.alcaldiaSlug,
+      escuela: escuela.slug
+    },
+    props: { escuela }
+  }));
+}
+
+const { escuela } = Astro.props;
+const { Content } = await render(escuela);
+
+const alcaldias = await getCollection('alcaldias');
+const alcaldia = alcaldias.find((item) => item.slug === escuela.data.alcaldiaSlug);
+
+const estados = await getCollection('estados');
+const estado = estados.find((item) => item.slug === escuela.data.estadoSlug);
+
+const whatsappMessage = encodeURIComponent(
+  'Hola, encontre su escuela en ESDEMA y me gustaria informacion sobre cursos de manejo.'
+);
+const whatsappUrl = `https://wa.me/${escuela.data.whatsapp}?text=${whatsappMessage}`;
+
+const dayMap: Record<string, string> = {
+  Lunes: 'Monday',
+  Martes: 'Tuesday',
+  Miercoles: 'Wednesday',
+  Jueves: 'Thursday',
+  Viernes: 'Friday',
+  Sabado: 'Saturday',
+  Domingo: 'Sunday'
+};
+
+const schoolSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'DrivingSchool',
+  name: escuela.data.nombreSeo,
+  alternateName: escuela.data.nombreComercial,
+  description: escuela.data.seo.description,
+  url: new URL(escuela.data.seo.canonicalPath, Astro.site).toString(),
+  telephone: escuela.data.telefono,
+  ...(escuela.data.email ? { email: escuela.data.email } : {}),
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: escuela.data.direccion,
+    addressLocality: escuela.data.colonia,
+    addressRegion: alcaldia?.data.nombre ?? escuela.data.alcaldiaSlug,
+    postalCode: escuela.data.codigoPostal,
+    addressCountry: 'MX'
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: escuela.data.geo.lat,
+    longitude: escuela.data.geo.lng
+  },
+  openingHoursSpecification: escuela.data.horarios.map((horario) => ({
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: dayMap[horario.dia] ?? horario.dia,
+    opens: horario.abre,
+    closes: horario.cierra
+  })),
+  priceRange: escuela.data.precioRango,
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: escuela.data.rating.toFixed(1),
+    reviewCount: String(escuela.data.totalResenas),
+    bestRating: '5',
+    worstRating: '1'
+  },
+  review: escuela.data.resenas.map((resena) => ({
+    '@type': 'Review',
+    author: {
+      '@type': 'Person',
+      name: resena.autor
+    },
+    reviewRating: {
+      '@type': 'Rating',
+      ratingValue: String(resena.rating)
+    },
+    reviewBody: resena.texto
+  }))
+};
+---
+
+<BaseLayout
+  title={escuela.data.seo.title}
+  description={escuela.data.seo.description}
+  canonicalPath={escuela.data.seo.canonicalPath}
+>
+  <JsonLd data={schoolSchema} />
+
+  <section class="section">
+    <div class="container">
+      <Breadcrumbs
+        items={[
+          { label: 'Inicio', href: '/' },
+          { label: estado?.data.nombre ?? escuela.data.estadoSlug.toUpperCase(), href: `/${escuela.data.estadoSlug}/` },
+          { label: alcaldia?.data.nombre ?? escuela.data.alcaldiaSlug, href: `/${escuela.data.estadoSlug}/${escuela.data.alcaldiaSlug}/` },
+          { label: escuela.data.zonaSeo }
+        ]}
+      />
+
+      <div class="panel school-hero-card">
+        <p class="meta-chip">{escuela.data.colonia}</p>
+        <h1>{escuela.data.nombreComercial}</h1>
+        <p class="meta">{escuela.data.precioRango} · {escuela.data.rating.toFixed(1)} de 5 ({escuela.data.totalResenas} resenas)</p>
+
+        <div class="badge-row">
+          {escuela.data.badges.map((badge) => (
+            <span class="badge">{badge}</span>
+          ))}
+        </div>
+
+        <div class="card-actions">
+          <a class="button" href={whatsappUrl} target="_blank" rel="noreferrer">Contactar por WhatsApp</a>
+          <a class="button button-ghost" href={`tel:${escuela.data.telefono}`}>Llamar</a>
+        </div>
+      </div>
+
+      <div class="grid grid-2 school-layout">
+        <article class="panel">
+          <h2>Perfil</h2>
+          <Content />
+
+          <h3>Servicios</h3>
+          <ul>
+            {escuela.data.servicios.map((servicio) => (
+              <li>{servicio}</li>
+            ))}
+          </ul>
+        </article>
+
+        <aside class="panel">
+          <h2>Contacto</h2>
+          <p><strong>Direccion:</strong> {escuela.data.direccion}</p>
+          <p><strong>CP:</strong> {escuela.data.codigoPostal}</p>
+          <p><strong>Telefono:</strong> <a href={`tel:${escuela.data.telefono}`}>{escuela.data.telefono}</a></p>
+          {escuela.data.email && <p><strong>Email:</strong> <a href={`mailto:${escuela.data.email}`}>{escuela.data.email}</a></p>}
+          {escuela.data.semoviRegistro && <p><strong>Registro:</strong> {escuela.data.semoviRegistro}</p>}
+          <p><strong>Precio desde:</strong> {escuela.data.precioDesde}</p>
+
+          <h3>Horario</h3>
+          <ul>
+            {escuela.data.horarios.map((horario) => (
+              <li>{horario.dia}: {horario.abre} - {horario.cierra}</li>
+            ))}
+          </ul>
+        </aside>
+      </div>
+
+      {!!escuela.data.resenas.length && (
+        <>
+          <h2>Resenas destacadas</h2>
+          <div class="grid grid-3">
+            {escuela.data.resenas.map((resena) => (
+              <article class="panel review-card">
+                <p class="meta-chip">{resena.rating.toFixed(1)} / 5</p>
+                <h3>{resena.autor}</h3>
+                <p class="meta">{resena.texto}</p>
+              </article>
+            ))}
+          </div>
+        </>
+      )}
+
+      {!!escuela.data.faqs.length && (
+        <>
+          <h2>Preguntas frecuentes</h2>
+          <div class="grid faq-grid">
+            {escuela.data.faqs.map((faq) => (
+              <details class="panel faq-item">
+                <summary>{faq.pregunta}</summary>
+                <p>{faq.respuesta}</p>
+              </details>
+            ))}
+          </div>
+        </>
+      )}
+    </div>
+  </section>
+</BaseLayout>

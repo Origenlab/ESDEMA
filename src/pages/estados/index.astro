@@ -1,0 +1,30 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const estados = await getCollection('estados');
+---
+
+<BaseLayout
+  title="Estados | ESDEMA"
+  description="Directorio de estados disponibles en ESDEMA."
+  canonicalPath="/estados/"
+>
+  <section class="section">
+    <div class="container">
+      <h1>Estados</h1>
+      <p class="meta">Cada estado se administra como contenido Markdown y genera su SEO automaticamente.</p>
+      <div class="grid grid-3">
+        {estados.map((estado) => (
+          <article class="panel card">
+            <h2>
+              <a href={`/${estado.slug}/`}>{estado.data.nombre}</a>
+            </h2>
+            <p class="meta">{estado.data.descripcionCorta}</p>
+            <p class="meta">{estado.data.alcaldiasAprox} zonas · {estado.data.escuelasAprox}+ escuelas</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

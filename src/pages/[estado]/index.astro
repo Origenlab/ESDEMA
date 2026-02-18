@@ -1,0 +1,77 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import JsonLd from '../../components/JsonLd.astro';
+
+export async function getStaticPaths() {
+  const estados = await getCollection('estados');
+
+  return estados.map((estado) => ({
+    params: { estado: estado.slug },
+    props: { estado }
+  }));
+}
+
+const { estado } = Astro.props;
+
+const alcaldias = await getCollection('alcaldias', (item) => item.data.estadoSlug === estado.slug);
+const escuelas = await getCollection('escuelas', (item) => item.data.estadoSlug === estado.slug);
+
+const escuelasPorAlcaldia = (slug: string) =>
+  escuelas.filter((escuela) => escuela.data.alcaldiaSlug === slug).length;
+
+const collectionJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: `Escuelas de Manejo en ${estado.data.nombre}`,
+  description: estado.data.seo.description,
+  url: new URL(estado.data.seo.canonicalPath, Astro.site).toString()
+};
+---
+
+<BaseLayout
+  title={estado.data.seo.title}
+  description={estado.data.seo.description}
+  canonicalPath={estado.data.seo.canonicalPath}
+>
+  <JsonLd data={collectionJsonLd} />
+
+  <section class="section">
+    <div class="container">
+      <Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: estado.data.nombre }]} />
+      <h1>Escuelas de Manejo en {estado.data.nombre}</h1>
+      <p class="meta lead">{estado.body}</p>
+
+      <div class="grid grid-3 state-stats">
+        <article class="panel kpi">
+          <strong>{alcaldias.length}</strong>
+          <span>Alcaldias publicadas</span>
+        </article>
+        <article class="panel kpi">
+          <strong>{escuelas.length}</strong>
+          <span>Escuelas con perfil completo</span>
+        </article>
+        <article class="panel kpi">
+          <strong>{estado.data.escuelasAprox}+</strong>
+          <span>Escuelas estimadas en el mercado</span>
+        </article>
+      </div>
+
+      <h2>Alcaldias destacadas</h2>
+      <div class="grid grid-2">
+        {alcaldias.map((alcaldia) => (
+          <article class="panel card">
+            <h3>
+              <a href={`/${estado.slug}/${alcaldia.slug}/`}>{alcaldia.data.nombre}</a>
+            </h3>
+            <p class="meta">
+              Desde {alcaldia.data.precioDesde} · {escuelasPorAlcaldia(alcaldia.slug)} perfiles activos
+            </p>
+            <p class="meta">Colonias clave: {alcaldia.data.colonias.slice(0, 4).join(', ')}.</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
