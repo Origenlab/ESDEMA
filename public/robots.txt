@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://esdema.mx/sitemap-index.xml
+Sitemap: https://escuelademanejo.mx/sitemap-index.xml
