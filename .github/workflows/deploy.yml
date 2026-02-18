@@ -31,6 +31,17 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
+      - name: Enforce Pages workflow mode
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          curl -sS -L \
+            -X PUT \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer ${GH_TOKEN}" \
+            "https://api.github.com/repos/${{ github.repository }}/pages" \
+            -d '{"build_type":"workflow"}'
+
       - name: Install dependencies
         run: npm ci
 
