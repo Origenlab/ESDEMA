@@ -1,0 +1,184 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Nosotros | ESDEMA — Directorio de Escuelas de Manejo en Mexico"
+  description="Conoce la mision de ESDEMA: conectar a miles de mexicanos con las mejores escuelas de manejo verificadas en CDMX y toda la Republica Mexicana."
+  canonicalPath="/nosotros/"
+>
+  <!-- Hero -->
+  <section class="section" style="background: linear-gradient(135deg, var(--primary-50) 0%, white 100%); padding-top: var(--space-3xl); padding-bottom: var(--space-3xl);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Quienes Somos</span>
+        <h1>El directorio de escuelas de manejo <span class="text-gradient">mas confiable de Mexico</span></h1>
+        <p>Nuestra mision es que cada mexicano encuentre la escuela de manejo correcta sin perder tiempo ni dinero.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission & Vision -->
+  <section class="section">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-xl);">
+
+        <article class="service-card">
+          <div class="service-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M12 8v4l3 3"/>
+            </svg>
+          </div>
+          <h2>Nuestra mision</h2>
+          <p>Conectar a conductores nuevos con escuelas de manejo verificadas, transparentes y accesibles en toda la Republica Mexicana. Creemos que aprender a manejar bien salva vidas.</p>
+        </article>
+
+        <article class="service-card">
+          <div class="service-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+              <circle cx="12" cy="12" r="3"/>
+            </svg>
+          </div>
+          <h2>Nuestra vision</h2>
+          <p>Ser la plataforma de referencia para la educacion vial en Mexico, con informacion actualizada, resenas verificadas y acceso directo a las mejores escuelas del pais.</p>
+        </article>
+
+        <article class="service-card">
+          <div class="service-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <h2>Nuestros valores</h2>
+          <p>Transparencia en la informacion, verificacion de escuelas antes de publicar, y compromiso con la seguridad vial. Nunca publicamos escuelas sin validar sus datos de contacto.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="section section-gray">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">ESDEMA en numeros</span>
+        <h2>El impacto de nuestro directorio</h2>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-lg); text-align: center;">
+        <div class="hero-gama-stat">
+          <div class="hero-gama-stat-value">120+</div>
+          <div class="hero-gama-stat-label">Escuelas verificadas</div>
+        </div>
+        <div class="hero-gama-stat">
+          <div class="hero-gama-stat-value">7</div>
+          <div class="hero-gama-stat-label">Alcaldias cubiertas</div>
+        </div>
+        <div class="hero-gama-stat">
+          <div class="hero-gama-stat-value">5K+</div>
+          <div class="hero-gama-stat-label">Alumnos beneficiados</div>
+        </div>
+        <div class="hero-gama-stat">
+          <div class="hero-gama-stat-value">1,200+</div>
+          <div class="hero-gama-stat-label">Resenas verificadas</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How we verify -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Proceso de Verificacion</span>
+        <h2>Como verificamos las escuelas</h2>
+        <p>No cualquier escuela puede aparecer en ESDEMA. Seguimos un proceso riguroso de validacion.</p>
+      </div>
+      <div class="steps-grid">
+        <article class="step">
+          <div class="step-number">1</div>
+          <div class="step-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+              <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+            </svg>
+          </div>
+          <h3>Registro SEMOVI</h3>
+          <p>Verificamos que la escuela cuente con registro vigente ante la Secretaria de Movilidad de la CDMX.</p>
+        </article>
+        <article class="step">
+          <div class="step-number">2</div>
+          <div class="step-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6"/>
+            </svg>
+          </div>
+          <h3>Contacto directo</h3>
+          <p>Llamamos o contactamos por WhatsApp para confirmar datos, servicios y disponibilidad de la escuela.</p>
+        </article>
+        <article class="step">
+          <div class="step-number">3</div>
+          <div class="step-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+            </svg>
+          </div>
+          <h3>Validacion de resenas</h3>
+          <p>Revisamos que las resenas sean de alumnos reales y filtramos cualquier contenido falso o sospechoso.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <span class="cta-badge">Registra tu escuela</span>
+        <h2>¿Tienes una escuela de manejo?</h2>
+        <p>Si tu escuela esta certificada por SEMOVI y cumple nuestros estandares de calidad, puedes solicitar su inclusion en el directorio.</p>
+        <div class="cta-actions">
+          <a href="https://wa.me/525500000001?text=Hola,%20quiero%20registrar%20mi%20escuela%20en%20ESDEMA"
+             class="btn btn-white btn-lg" target="_blank" rel="noopener">
+            Solicitar inclusion por WhatsApp
+          </a>
+          <a href="/contacto/" class="btn btn-whatsapp-light btn-lg">
+            Formulario de contacto
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .text-gradient {
+    background: linear-gradient(135deg, var(--primary-600) 0%, var(--accent-600) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .section-badge {
+    display: inline-block;
+    padding: var(--space-xs) var(--space-md);
+    background: var(--primary-100);
+    color: var(--primary-700);
+    border-radius: var(--radius-full);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    margin-bottom: var(--space-md);
+  }
+  .cta-badge {
+    display: inline-block;
+    padding: var(--space-xs) var(--space-md);
+    background: rgba(255,255,255,.2);
+    color: white;
+    border-radius: var(--radius-full);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    margin-bottom: var(--space-lg);
+  }
+  .btn-white { background: white; color: var(--primary-700); }
+  .btn-whatsapp-light { background: rgba(255,255,255,.15); color: white; border: 2px solid rgba(255,255,255,.3); }
+</style>
